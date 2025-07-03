@@ -1,0 +1,248 @@
+.destination {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 24px 24px 0;
+  &::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../assets/destination/background-destination-mobile.jpg') no-repeat center center;
+    background-size: cover;
+    z-index: -100;
+  }
+  .destination_img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .page_title {
+      font-family: 'BarlowCondensed';
+      letter-spacing: 0.15em;
+      span {
+        font-weight: bold;
+        opacity: 0.25;
+        margin-right: 24px;
+      }
+    }
+    .destination_tabs_img {
+      margin-top: 24px;
+      height: 203px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        width: 150px;
+        height: 150px;
+      }
+    }
+  }
+  .destination_msg {
+    ::v-deep .van-tabs__wrap {
+      height: 32px;
+      width: 246px;
+      margin: 0 auto;
+      .van-tabs__nav {
+        position: relative;
+        height: 32px;
+        padding: 0;
+        background-color: transparent;
+        width: 246px;
+        justify-content: space-between;
+        .van-tabs__line {
+          position: absolute;
+          bottom: 0;
+          border-radius: 0;
+          background-color: #fff;
+          transform: translateX(-10px);
+        }
+        .van-tab__text {
+          color: @BLUE-300;
+          width: 100%;
+        }
+        .van-tab__text--ellipsis {
+        }
+        .van-tab--active {
+          &::after {
+            display: none !important;
+          }
+          .van-tab__text {
+            color: #fff;
+          }
+        }
+        .van-tab {
+          display: inline-block;
+          padding: 0;
+          -webkit-box-flex: initial;
+          flex: none;
+          position: relative;
+          &:not(.van-tab--active):hover::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px; // 与激活状态线条高度一致
+            background: #fff; // 白色背景
+            opacity: 0.3; // 50%透明度
+          }
+        }
+      }
+    }
+    ::v-deep .van-tabs__content {
+      margin-top: 24px;
+      .van-tab__pane {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        h2 {
+          height: 64px;
+          font-family: 'Bellefair';
+          font-size: 56px;
+          font-weight: normal;
+        }
+        .msg_content {
+          font-family: 'Barlow';
+          font-size: 15px;
+          font-weight: normal;
+          line-height: 180%;
+          text-align: center;
+          color: @BLUE-300;
+          margin-top: 16px;
+        }
+        .line {
+          width: 100%;
+          height: 1px;
+          align-self: stretch;
+          opacity: 0.25;
+          background: #FFFFFF;
+          margin: 24px 0;
+        }
+        .count {
+          padding-bottom: 24px;
+          .distance {
+            height: 17px;
+            font-family: 'BarlowCondensed';
+            font-size: 14px;
+            font-weight: normal;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: @BLUE-300;
+          }
+          span {
+            display: block;
+            margin-top: 12px;
+            width: 327px;
+            height: 32px;
+            font-family: 'Bellefair';
+            font-size: 28px;
+            text-align: center;
+            text-transform: uppercase;
+            color: #FFFFFF;
+            &:nth-child(2) {
+              margin-bottom: 24px;
+            }
+          }
+          .time {
+            height: 17px;
+            font-family: 'BarlowCondensed';
+            font-size: 14px;
+            font-weight: normal;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: @BLUE-300;
+            margin-top: 24px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .destination {
+    min-height: 100%;
+    padding: 40px;
+    &::before {
+      content: '';
+      background: url('../assets/destination/background-destination-tablet.jpg') no-repeat center center;
+      background-size: cover;
+    }
+    .destination_img {
+      .page_title {
+        align-self: flex-start;
+      }
+      .destination_tabs_img {
+        margin-top: 24px;
+        min-height: 384px;
+        img {
+          min-width: 300px;
+          min-height: 300px;
+        }
+      }
+    }
+    .destination_msg {
+      margin-top: 32px;
+      ::v-deep .van-tabs__content {
+        .van-tab__pane {
+          h2 {
+            height: 92px;
+            font-size: 80px;
+          }
+          .msg_content {
+            width: 514px;
+            height: 87px;
+            font-size: 16px;
+          }
+          .line {
+            max-width: 514px;
+            margin: 24px auto;
+          }
+          .count {
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 40px;
+            .time {
+              margin-top: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  .destination {
+    min-height: 780px;
+    padding: 48px 165px 0;
+    flex-direction: row;
+    justify-content: space-between;
+    &::before {
+      content: '';
+      background: url('../assets/destination/background-destination-desktop.jpg') no-repeat center center;
+      background-size: cover;
+    }
+    .destination_img {
+      .page_title {
+        font-size: 28px;
+      }
+      .destination_tabs_img {
+        width: 539px;
+        height: 600px;
+        img {
+          width: 480px;
+          height: 480px;
+        }
+      }
+    }
+    .destination_msg {
+      height: 600px;
+      padding: 132px 47px 0;
+    }
+  }
+}

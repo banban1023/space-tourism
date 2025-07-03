@@ -1,0 +1,56 @@
+.destination {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  height: 100%;
+}
+.destination::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('../assets/destination/background-destination-mobile.jpg') no-repeat center center;
+  background-size: cover;
+  z-index: -100;
+}
+.destination .destination_img {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.destination .destination_img .page_title {
+  font-family: 'BarlowCondensed';
+  letter-spacing: 0.15em;
+}
+.destination .destination_img .page_title span {
+  font-weight: bold;
+  opacity: 0.25;
+  margin-right: 24px;
+}
+.destination .destination_img .destination_tabs_img {
+  margin-top: 24px;
+  height: 203px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.destination .destination_img .destination_tabs_img img {
+  width: 150px;
+  height: 150px;
+}
+.destination .destination_msg ::v-deep .van-tabs__nav {
+  position: relative;
+  height: 32px;
+  padding: 0;
+  background-color: transparent;
+}
+.destination .destination_msg ::v-deep .van-tabs__nav .van-tabs__line {
+  position: absolute;
+  bottom: 0;
+}
+.destination .destination_msg ::v-deep .van-tabs__nav .van-tab--active .van-tab__text {
+  color: #fff;
+}

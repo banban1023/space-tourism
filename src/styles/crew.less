@@ -1,0 +1,206 @@
+.crew {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 24px 24px 0;
+  &::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../assets/crew/background-crew-mobile.jpg') no-repeat center center;
+    background-size: cover;
+    z-index: -100;
+  }
+  header {
+    .crew_title {
+      font-family: 'BarlowCondensed';
+      font-size: 16px;
+      font-weight: normal;
+      letter-spacing: 0.15em;
+      text-align: center;
+      span {
+        font-weight: bold;
+        letter-spacing: 0.15em;
+        opacity: 0.25;
+        margin-right: 24px;
+      }
+    }
+    .crew_swipe {
+      margin: 0 auto;
+      padding-top: 40px;
+      article {
+        .crew_role {
+          font-family: 'Bellefair';
+          font-size: 18px;
+          text-align: center;
+          text-transform: uppercase;
+          opacity: 0.5;
+        }
+        .crew_name {
+          font-family: 'Bellefair';
+          font-size: 24px;
+          text-align: center;
+          font-weight: normal;
+          text-transform: uppercase;
+          margin-top: 8px;
+        }
+        .crew_content {
+          margin-top: 24px;
+          height: 164px;
+          font-size: 15px;
+          line-height: 180%;
+          text-align: center;
+          color: @BLUE-300;
+        }
+      }
+      ol {
+        display: flex;
+        width: 88px;
+        justify-content: space-between;
+        margin: 0 auto;
+        li {
+          width: 10px;
+          height: 10px;
+          opacity: 0.1744;
+          background-color: #FFFFFF;
+          border-radius: 50%;
+          font-size: 0;
+          transition: all 0.3s;
+          &:hover {
+            opacity: 0.4;
+            cursor: pointer;
+          }
+        }
+        .active {
+          opacity: 1;
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+  .crew_img {
+    margin: 32px auto 0;
+    padding-top: 5px;
+    display: flex;
+    justify-content: center;
+    width: 327px;
+    height: 350px;
+    img {
+      width: 100%;
+      mask: linear-gradient(
+      to top, 
+      transparent 0%, 
+      rgba(0, 0, 0, 0.2) 5%, 
+      rgba(0, 0, 0, 1) 30%
+      );
+      object-fit: contain;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .crew {
+    padding: 40px 40px 0;
+    overflow: hidden;
+    &::before {
+      background: url('../assets/crew/background-crew-tablet.jpg') no-repeat center center / cover;
+    }
+    header {
+      .crew_title {
+        text-align: left;
+        font-size: 20px;
+        letter-spacing: 0.15em;
+      }
+      .crew_swipe {
+        article {
+          margin-top: 24px;
+          .crew_role {
+            font-size: 24px;
+          }
+          .crew_name {
+            font-size: 40px;
+            margin-top: 16px;
+          }
+          .crew_content {
+            width: 512px;
+            padding: 0 8px;
+            margin: 0 auto;
+            font-size: 16px;
+            font-weight: normal;
+            line-height: 180%;
+            letter-spacing: normal;
+          }
+        }
+      }
+    }
+    .crew_img {
+      height: 100%;
+      img {
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  .crew {
+    padding: 48px 165px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    &::before {
+      background: url('../assets/crew/background-crew-desktop.jpg') no-repeat center center / cover;
+    }
+    header {
+      height: 734px;
+      .crew_title {
+        font-size: 28px;
+        letter-spacing: 4px;
+      }
+      .crew_swipe {
+        padding: 0;
+        margin-top: 220px;
+        article {
+          .crew_role {
+            font-size: 32px;
+            text-align: left;
+          }
+          .crew_name {
+            text-align: left;
+            font-size: 56px;
+          }
+          .crew_content {
+            font-size: 18px;
+            line-height: 180%;
+            text-align: left;
+            padding: 0;
+            margin: 0;
+            width: 539px;
+          }
+        }
+        ol {
+          position: absolute;
+          bottom: 96px;
+          width: 180px;
+          li {
+            width: 15px;
+            height: 15px;
+          }
+        }
+      }
+    }
+    .crew_img {
+      width: 539px;
+      height: 734px;
+      img {
+        object-fit: contain;
+        width: 100%;
+      }
+    }
+  }
+}
